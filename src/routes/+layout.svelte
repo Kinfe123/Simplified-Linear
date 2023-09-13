@@ -2,6 +2,7 @@
     import '../app.css'
     import {invalidate} from '$app/navigation'
     import { onMount } from 'svelte';
+	import { loadDbs } from '../store/todoStore';
     export let data;
     let {supabase , session } = data;
     $:({supabase , session} = data)
@@ -13,9 +14,11 @@
                 invalidate('supabase:auth')
             }
         })
+        loadDbs()
     // clean up
     return () => response.data.subscription.unsubscribe() ;
     });
+
 </script>
 
 

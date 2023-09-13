@@ -1,6 +1,9 @@
 <script>
    import { deleteTodo, todos, toogleCompleted } from "../store/todoStore";
-   export let data
+//    /**
+// 	 * @type {{ todo: string; email: string; completed: any; id: any; }}
+// 	 */
+    export let data
 //    console.log('From rpops: ' , data)
 
    const handleComplete = (id) => {
@@ -13,11 +16,11 @@
 
 </script>
 
-<div class='flex flex-col justify-center items-center my-10 w-full'>
+<div class='flex flex-col justify-center items-center my-2 w-full'>
     <div class="w-2/4 h-24 border-2 border-slate-900  p-2 ">
-        <h3>Todo Discription</h3>
+        <h3>{data.todo}</h3>
         <!-- <a href="/lists">check</a> -->
-        <p class="text-sm font-bold my-1 ">{data.todo}</p>
+        <p class="text-sm font-bold my-1 ">{data.email.slice(0 , data.email.indexOf("@"))}</p>
         <div class="flex justify-between items-cnter">
             <div>
                 {#if data.completed}

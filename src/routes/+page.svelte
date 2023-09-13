@@ -8,7 +8,7 @@ import TodoForm from '../components/TodoForm.svelte'
     let count = 0
     // console.log("The supabase cleitn: " , supabase)
     export let data;
-    console.log("Hello the data is here: " , data)
+    console.log("Hello the data is here: " , data.session)
 
 </script>
 
@@ -21,7 +21,7 @@ import TodoForm from '../components/TodoForm.svelte'
 <body class="flex flex-col justify-center items-center gap-2">
 
     <!-- <TodoForm /> -->
-    <button class="my-2 text-center bg-green-500 border-2 border-slate-900 px-2 py-1"><a href="/todos">Create a todo</a></button>
+<a href="/todos" class='my-2  bg-green-500 border-2 border-slate-900 px-2 py-1'>Create a todo</a>
     {#if todos}
     {#each $todos as td}
 
